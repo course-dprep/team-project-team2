@@ -28,7 +28,7 @@
 ## Preview of Findings 
 - Describe the gist of your findings (save the details for the final paper!)
 - How are the findings/end product of the project deployed?
-- Explain the relevance of these findings/product. 
+- Explain the relevance of these findings/product. test 
 
 ## Repository Overview 
 
