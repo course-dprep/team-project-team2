@@ -7,6 +7,19 @@
 
 # Title of your Project Project Team 2
 *Describe the purpose of this project* 
+Since 2010, the film industry has been shaken on its foundations due to
+the increasing popularity of streaming platforms (Hennig-Thurau et al.,
+2021). This year, Netflix expanded their streaming service
+internationally, marking a key point in the growth of on-demand content
+(Oberoi, 2024). Distribution patterns changed, and consumer perceptions
+of movies have shifted (Kumar, 2023). Most notably, the saturation and
+availability of the entertainment market have resulted in more critical
+consumers, which seemingly affects how audiences evaluate films (Hadida
+et al., 2020). The present study aims to shed light on the temporal
+dynamics within the quality perception of movies by answering the
+following research question.
+
+Tom is mij aan het helpen met een tutorial
 
 ## Motivation
 
