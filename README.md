@@ -22,7 +22,7 @@
 
 ## Method
 
-- What methods do you use to answer your research question?
+- What methods do you use to answer your research question? explain
 - Provide justification for why it is the most suitable. 
 
 ## Preview of Findings 
