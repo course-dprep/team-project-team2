@@ -5,7 +5,7 @@
 > Feel free to delete this text.
 
 
-# Title of your Project
+# Title of your Project Project Team 2
 *Describe the purpose of this project* 
 
 ## Motivation
@@ -47,3 +47,4 @@
 This project is set up as part of the Master's course [Data Preparation & Workflow Management](https://dprep.hannesdatta.com/) at the [Department of Marketing](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing), [Tilburg University](https://www.tilburguniversity.edu/), the Netherlands.
 
 The project is implemented by team < x > members: < insert member details>
+
