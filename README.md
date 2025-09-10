@@ -55,6 +55,14 @@ et al., 2020). The present study aims to shed light on the temporal
 dynamics within the quality perception of movies by answering the
 following research question.
 
+Technological progress in filmmaking has been especially evident in animation, 
+where advances in CGI and production techniques have greatly enhanced visual 
+quality (Sun, 2023). Consequently, audience evaluations of animated films may 
+differ from live-action films, where newer releases do not benefit from the 
+same perceptual improvements. Therefore, the animation status is included, 
+animated vs. non-animated, as a moderator to test whether the relationship 
+between release year and user ratings depends on a movie’s animation type.
+
 ## Data
 
 This dataset is constructed using secondary data from IMDb.com. A
@@ -72,8 +80,10 @@ professionals or consumers.
 
 To test the hypothesis, a linear regression was conducted. Release year
 was treated as the independent variable, and average user rating as the
-dependent variable. Other potential factors that could influence
-ratings, such as genre, budget, actors, or directors, were included as
+dependent variable.Animation status (0 = non-animated, 1 = animated) was 
+included as a moderator, and moderation was examined via the interaction 
+term between release year and animation status. Other potential factors that 
+could influence ratings, such as genre, budget, actors, or directors, were included as
 control variables. This study focuses on films released between 2010 and
 the present (2025), as selected from the following datasets.
 
@@ -161,3 +171,5 @@ Oberoi, S. (2024, December 3). The Evolution of Netflix: from DVD
 Rentals to Global Streaming Leader. Seat11a.com.
 <https://seat11a.com/blog-the-evolution-of-netflix-from-dvd-rentals-to-global-streaming-leader/>
 
+Sun, Z. (2023). What does cgi digital technology bring to the sustainable 
+development of animated films?. Sustainability, 15(14), 10895.<https://doi.org/10.3390/su151410895>
