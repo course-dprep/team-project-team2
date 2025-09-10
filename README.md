@@ -31,7 +31,7 @@ omnipresent effect with the release of new movies. All in all, these
 findings suggest that newer films are rated worse than older films,
 which the present study tests with the hypothesis:
 
-H1: There is a negative relationship between release year and rating.
+H: There is a negative relationship between release year and rating.
 
 By analyzing whether a movie’s release year influences its average user
 rating, we can better understand trends in audience perception during
