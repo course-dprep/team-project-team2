@@ -11,7 +11,7 @@
 ## Research Question
 
 -   To what extent does a movie’s release year influence the average
-    user rating?
+    user rating? And does this relationship differ between animated and non-animated films?
 
 ## Hypothesis
 
