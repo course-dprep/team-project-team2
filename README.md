@@ -31,7 +31,7 @@ omnipresent effect with the release of new movies. All in all, these
 findings suggest that newer films are rated worse than older films,
 which the present study tests with the hypothesis:
 
-H: There is a negative relationship between release year and rating.
+H1: There is a negative relationship between release year and rating.
 
 By analyzing whether a movie’s release year influences its average user
 rating, we can better understand trends in audience perception during
@@ -40,12 +40,6 @@ be relevant for filmmakers, distributors, and researchers interested in
 how modern industry changes affect audience evaluation.
 
 H2: The negative effect of release year on rating is weaker for animated films compared to non-animated films. 
-
-By analyzing whether a movie’s release year influences its average user
-rating, we can better understand trends in audience perception during
-the past decade and a half. The insights generated from this study may
-be relevant for filmmakers, distributors, and researchers interested in
-how modern industry changes affect audience evaluation.
 
 ## Motivation
 
