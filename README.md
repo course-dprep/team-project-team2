@@ -61,9 +61,10 @@ This dataset is constructed using secondary data from IMDb.com. A
 dataset is created with all IMDB movies from 2010 until present. The
 main objectives derived from this dataset are specifically
 title.basics.tsv.gz and title.ratings.tsv.gz. These datasets contain
-information about titles (e.g. release year, run time, and genre) and
-ratings from all titles (e.g. average rate and number of votes). The
-IMDb ratings come from IMDb users and can be professionals or consumers.
+information about titles (e.g. release year, run time, and genre including
+if the movie is anitmation or not) and ratings from all titles (e.g. average 
+rate and number of votes). The IMDb ratings come from IMDb users and can be 
+professionals or consumers.
 
 
 
@@ -93,7 +94,9 @@ user ratings numVotes - number of votes the title has received
 
 basics tconst (string): alphanumeric unique identifier of the title
 (both datasets) startYear (YYYY) – represents the release year of a
-title
+title genres - includes the genre of the movie and if it is animated or 
+not
+
 
 ## Running Instructions 
 
