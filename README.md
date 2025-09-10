@@ -5,7 +5,7 @@
 > Feel free to delete this text.
 
 
-# Title of your Project Project Team 2
+# Impact of Computer-Generated Animation on IMDb Ratings Over Time
 *Describe the purpose of this project* 
 
 ## Research Question
