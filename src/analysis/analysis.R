@@ -1,1 +1,5 @@
-# In this directory, you will keep all source code related to your analysis.
+#Preliminary Regression analysis
+regression <- lm(averageRating ~ startYear + runtimeMinutes + numVotes, data = movies)
+summary(regression)
+
+#Next; Check assumptions...

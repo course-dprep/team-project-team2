@@ -85,9 +85,8 @@ eligible_data <- eligible_data %>%
 
 #Check the variable runtimeMinutes
 summary(eligible_data$runtimeMinutes)
-#The max of 59460 minutes is unrealistic. Remove this with
-eligible_data <- eligible_data %>% filter(runtimeMinutes != 59460)
-#Oscars define a feature film has a length that exceeds 40, so filter this
+#Oscars define a feature film has a length that exceeds 40. Additionally, 
+#IMDb states the longest animated film is 162 minutes. Therefore filter runtime
 
 #To ensure reliable analysis, low number of votes should be eliminated as these
 #do not result in reliable averageRatings
@@ -96,11 +95,14 @@ summary(eligible_data$numVotes)
 
 #Creating the FINAL dataset named "movies" for further analysis
 movies <- filter(eligible_data,
-                 runtimeMinutes >= 40,
+                 runtimeMinutes >= 40, runtimeMinutes <= 162,
                  numVotes >= 1293)
 
 #Save the definitive dataset as a file
 write.csv(movies, file = "movies.csv", row.names = FALSE)
+
+
+
 
 ################################
 #PIPELINE STEP: DATA EXPLORATION
@@ -116,21 +118,8 @@ ggplot(movies, aes(x=averageRating)) + geom_histogram()
 graph <- movies %>% 
   group_by(startYear) %>% 
   summarize(meanRating = mean(averageRating, na.rm = TRUE))
-
 ggplot(graph, aes(x=startYear, y=meanRating)) + geom_line()
 
 #Frequencies: boxplot of runtime in minutes
-ggplot(movies_filter, aes(y = runtimeMinutes)) + geom_boxplot()
+ggplot(movies, aes(y = runtimeMinutes)) + geom_boxplot()
 
-
-
-########################
-#PIPELINE STEP: ANALYSIS
-########################
-
-#Regression analysis
-
-#Control variables
-isAdult??????
-  runtimeMinutes
-numVotes
