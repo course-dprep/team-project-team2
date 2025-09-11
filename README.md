@@ -129,6 +129,11 @@ not
 ## About 
 
 This project is set up as part of the Master's course [Data Preparation & Workflow Management](https://dprep.hannesdatta.com/) at the [Department of Marketing](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing), [Tilburg University](https://www.tilburguniversity.edu/), the Netherlands.
+For the team project, we will apply what we have learned in this course, for example:
+- Set up a reproducible workflow
+- Apply the complete Git workflow
+- Build and automate a full data preparation and analysis pipeline from scratch
+For the assignment, we can choose one of two datasets as the foundation of our work.
 
 The project is implemented by team 2: 
 - Britt van Haaster
