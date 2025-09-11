@@ -1,0 +1,83 @@
+---
+title: "DataPreperation"
+output: html_document
+---
+
+#Data Preperation information - A WORK IN PROGRESS
+
+##Loading raw data
+Since the IMDb-datasets update daily, the downloaded datasets have been stored
+in Google Drive and can be imported to ensure the same data from the 
+consideration of reproducing the results. Note: the data of IMDb was downloaded 
+on September 3rd 2025.
+
+```{r}
+#Import the IMDb 'basics' file
+file_id <- "1jDPyh6ikp85OIUf6LwSVB693aqK1TTU_"
+drive_download(as_id(file_id), path = "raw_basics.csv", overwrite = TRUE)
+raw_basics <- read.csv("raw_basics.csv")
+
+#Import the IMDb 'ratings' file
+raw_ratings <- read.csv("https://drive.google.com/uc?export=download&id=1tvvAQKNL6OTTiHc9xwzxkydWupzKMXJs")
+```
+
+The basics file is considerable large (11879925 observations), while the ratings
+file was moe condensed (1609173 observations). The two seperate files could then
+be converted into one large raw datafile.
+
+##Merging raw data
+
+Both datasets have the variable 'tconst' as the overlapping variable, which is
+thus used to merge the two datasets into one.
+
+```{r}
+#Combine the two datasets into one
+raw_combined <- merge(raw_basics, raw_ratings, by = "tconst", all.x = TRUE)
+```
+
+Two variables were not identified as numeric, which was changed with;
+
+```{r}
+#Set variables right; convert character variable to numeric
+raw_combined$startYear <- as.numeric(raw_combined$startYear)
+raw_combined$runtimeMinutes <- as.numeric(raw_combined$runtimeMinutes)
+```
+
+##Filtering raw data
+
+Different variables were inspected to ensure the dataset is in its most optimal
+form to produce reliable analysis results. This included checking
+- Content (the variable: "titleType")
+- Genres
+- Release year (the variable: "startYear")
+
+```{r}
+#Checking the different types of content
+sort(table(raw_combined$titleType), decreasing = TRUE)
+
+#Checking the years there is data of
+min(raw_combined$startYear, na.rm = TRUE)
+max(raw_combined$startYear, na.rm = TRUE)
+
+```
+
+The study is interested in movies released in cinema, so filter titleType to 
+"movie". Note: "tvMovie" is thus NOT included
+
+The study is interested from the period since the first computer animation 
+released. Therefore, 1995 is taken as the starting point given the release of
+Toy Story. Movies should have been released to ensure consistency across data,
+whereby 2024 is set as the other end for the filter
+
+All in all, the exploration of these variables result in the filter;
+
+```{r}
+#Applying the eligibility conditions in a filter to the raw dataset
+eligible_data <- filter(raw_combined, 
+                        titleType == "movie",
+                        startYear >= 1995, startYear < 2025)
+```
+
+
+*WORK IN PROGRESS*
+

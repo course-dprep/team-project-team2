@@ -10,17 +10,12 @@ library(googledrive)
 #PIPELINE STEP: LOADING DATA
 ############################
 
-#Since the IMDb-datasets update daily, the downloaded datasets have been stored
-#in Google Drive and can be imported to ensure the same data from the 
-#consideration of reproducing the results.
-#Note: the data of IMDb was downloaded on September 3rd 2025.
-
-#As the basics file is quite substantial in size, import it via;
+#Import the IMDb 'basics' file
 file_id <- "1jDPyh6ikp85OIUf6LwSVB693aqK1TTU_"
 drive_download(as_id(file_id), path = "raw_basics.csv", overwrite = TRUE)
 raw_basics <- read.csv("raw_basics.csv")
 
-#As the ratings file is not large in size, it can be imported via;
+#Import the IMDb 'ratings' file
 raw_ratings <- read.csv("https://drive.google.com/uc?export=download&id=1tvvAQKNL6OTTiHc9xwzxkydWupzKMXJs")
 
 ###################################################
@@ -42,11 +37,6 @@ sort(table(raw_combined$titleType), decreasing = TRUE)
 #The study is interested in movies released in cinema, so filter titleType to 
 #"movie". Note: "tvMovie" is thus NOT included
 
-#Checking the different types of genres
-sort(table(raw_combined$genres), decreasing = TRUE)
-#The study is interested in animated movies, so filter to "Animation"
-#Note, because there are a lot of combinations of genres, use a string detect 
-
 #Checking the years there is data of
 min(raw_combined$startYear, na.rm = TRUE)
 max(raw_combined$startYear, na.rm = TRUE)
@@ -58,14 +48,12 @@ max(raw_combined$startYear, na.rm = TRUE)
 #Applying the eligibility conditions in a filter to the raw dataset
 eligible_data <- filter(raw_combined, 
                         titleType == "movie",
-                        str_detect(genres, "Animation"),
                         startYear >= 1995, startYear < 2025)
 
 #Selecting the variables relevant to analysis to keep an overview
-#Note: Variables removed are; "tconst", "originalTitle", "endYear"
+#Note: Variables removed are; "tconst", "originalTitle", "isAdult", "endYear"
 eligible_data <- eligible_data %>% select(titleType, 
                                           primaryTitle,
-                                          isAdult, 
                                           startYear, 
                                           runtimeMinutes, 
                                           genres, 
@@ -85,52 +73,24 @@ eligible_data <- eligible_data %>%
 
 #Check the variable runtimeMinutes
 summary(eligible_data$runtimeMinutes)
-#The max of 59460 minutes is unrealistic. Remove this with
-eligible_data <- eligible_data %>% filter(runtimeMinutes != 59460)
-#Oscars define a feature film has a length that exceeds 40, so filter this
+#Oscars define a feature film has a length that exceeds 40. Additionally, 
+#there are some extremely long 'movies' in the dataset that are presumably not
+#movies but series compilation. This has to be filtered.
+
+eligible_data <- filter(eligible_data,
+                 runtimeMinutes >= 40, runtimeMinutes <= 280)
 
 #To ensure reliable analysis, low number of votes should be eliminated as these
 #do not result in reliable averageRatings
 summary(eligible_data$numVotes)
-#The 3rd quartile range is taken as the filter
+#The min, 1st quartile and median are both very low. 
 
 #Creating the FINAL dataset named "movies" for further analysis
 movies <- filter(eligible_data,
-                 runtimeMinutes >= 40,
-                 numVotes >= 1293)
+                 numVotes >= 1000)
+
+#Lastly, create dummy for animation since that is the focus of the research
+movies$animation_dummy <- ifelse(grepl("Animation", movies$genres), 1, 0)
 
 #Save the definitive dataset as a file
 write.csv(movies, file = "movies.csv", row.names = FALSE)
-
-################################
-#PIPELINE STEP: DATA EXPLORATION
-################################
-
-#Overview of definitive dataset
-summary(movies)
-
-#Frequencies: histogram of ratings
-ggplot(movies, aes(x=averageRating)) + geom_histogram()
-
-#Frequencies: average rating per year
-graph <- movies %>% 
-  group_by(startYear) %>% 
-  summarize(meanRating = mean(averageRating, na.rm = TRUE))
-
-ggplot(graph, aes(x=startYear, y=meanRating)) + geom_line()
-
-#Frequencies: boxplot of runtime in minutes
-ggplot(movies_filter, aes(y = runtimeMinutes)) + geom_boxplot()
-
-
-
-########################
-#PIPELINE STEP: ANALYSIS
-########################
-
-#Regression analysis
-
-#Control variables
-isAdult??????
-  runtimeMinutes
-numVotes
