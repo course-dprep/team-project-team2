@@ -1,17 +1,11 @@
-> **Important:** This is a template repository to help you set up your team project.  
->  
-> You are free to modify it based on your needs. For example, if your data is downloaded using *multiple* scripts instead of a single one (as shown in `\data\`), structure the code accordingly. The same applies to all other starter files—adapt or remove them as needed.  
->  
-> Feel free to delete this text.
-
-
 # Impact of Computer-Generated Animation on IMDb Ratings Over Time
 *Describe the purpose of this project* 
 
 ## Research Question
 
 -   To what extent does a movie’s release year influence the average
-    user rating? And does this relationship differ between animated and non-animated films?
+    user rating? 
+-   Does this relationship differ between animated and non-animated films?
 
 ## Hypothesis
 
@@ -33,11 +27,13 @@ which the present study tests with the hypothesis:
 
 H1: There is a negative relationship between release year and rating.
 
-By analyzing whether a movie’s release year influences its average user
-rating, we can better understand trends in audience perception during
-the past decade and a half. The insights generated from this study may
-be relevant for filmmakers, distributors, and researchers interested in
-how modern industry changes affect audience evaluation.
+Technological progress in filmmaking has been especially evident in animation, 
+where advances in CGI and production techniques have greatly enhanced visual 
+quality (Sun, 2023). Consequently, audience evaluations of animated films may 
+differ from live-action films, where newer releases do not benefit from the 
+same perceptual improvements. Therefore, the animation status is included, 
+animated vs. non-animated, as a moderator to test whether the relationship 
+between release year and user ratings depends on a movie’s animation type.
 
 H2: The negative effect of release year on rating is weaker for animated films compared to non-animated films. 
 
@@ -53,15 +49,11 @@ availability of the entertainment market have resulted in more critical
 consumers, which seemingly affects how audiences evaluate films (Hadida
 et al., 2020). The present study aims to shed light on the temporal
 dynamics within the quality perception of movies by answering the
-following research question.
-
-Technological progress in filmmaking has been especially evident in animation, 
-where advances in CGI and production techniques have greatly enhanced visual 
-quality (Sun, 2023). Consequently, audience evaluations of animated films may 
-differ from live-action films, where newer releases do not benefit from the 
-same perceptual improvements. Therefore, the animation status is included, 
-animated vs. non-animated, as a moderator to test whether the relationship 
-between release year and user ratings depends on a movie’s animation type.
+following research question. By analyzing whether a movie’s release year influences its average user
+rating, we can better understand trends in audience perception during
+the past decade and a half. The insights generated from this study may
+be relevant for filmmakers, distributors, and researchers interested in
+how modern industry changes affect audience evaluation.
 
 ## Data
 
@@ -80,10 +72,10 @@ professionals or consumers.
 
 To test the hypothesis, a linear regression was conducted. Release year
 was treated as the independent variable, and average user rating as the
-dependent variable.Animation status (0 = non-animated, 1 = animated) was 
+dependent variable. Animation status (0 = non-animated, 1 = animated) was 
 included as a moderator, and moderation was examined via the interaction 
 term between release year and animation status. Other potential factors that 
-could influence ratings, such as genre, budget, actors, or directors, were included as
+could influence ratings, such as runtime and number of votes, were included as
 control variables. This study focuses on films released between 2010 and
 the present (2025), as selected from the following datasets.
 
@@ -138,7 +130,16 @@ not
 
 This project is set up as part of the Master's course [Data Preparation & Workflow Management](https://dprep.hannesdatta.com/) at the [Department of Marketing](https://www.tilburguniversity.edu/about/schools/economics-and-management/organization/departments/marketing), [Tilburg University](https://www.tilburguniversity.edu/), the Netherlands.
 
-The project is implemented by team < x > members: < insert member details>
+The project is implemented by team 2: 
+- Britt van Haaster
+- Isah Huijbregts
+- Lars van der Kroft
+- Amanda van Lankveld
+- Amy Quist
+- Stefan Valentijn
+
+
+## Sources
 
 Billy Thompson. (2024, May 25). The Rise and Fall of Streaming TV? –
 Michigan Journal of Economics. Michigan Journal of Economics.
