@@ -7,6 +7,8 @@
     user rating? 
 -   Does this relationship differ between animated and non-animated films?
 
+This is a test
+
 ## Hypothesis
 
 There has been an increasingly critical attitude towards the franchise
